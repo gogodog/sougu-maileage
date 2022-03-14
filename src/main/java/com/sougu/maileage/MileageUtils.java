@@ -15,7 +15,7 @@ import java.util.List;
 public class MileageUtils {
 
     public static void main(String[] args) throws IOException {
-        List<String> files = getFiles("C:\\Users\\Administrator\\Desktop\\搜谷\\bakup");
+        List<String> files = getFiles("./static");
         for (String filePath : files) {
             System.out.println("*************************************************************************************************************************");
             runDistance(filePath);
