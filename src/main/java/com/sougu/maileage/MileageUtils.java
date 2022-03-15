@@ -33,8 +33,8 @@ public class MileageUtils {
         System.out.println("轨迹数据（点位数量）" + track.size());
         System.out.println("载体轨迹时长（秒）" + timeLength + "s");
         System.out.println("载体轨迹时长（分钟）" + timeLength/60 + "mins");
-        System.out.println("载体轨迹里程（米）" + mileage.toPlainString() + "m");
-        System.out.println("载体轨迹路径（千米）" + mileage.divide(new BigDecimal(1000)) + "km");
+        System.out.println("载体轨迹里程（米）" + mileage.setScale(2, RoundingMode.HALF_UP).toPlainString() + "m");
+        System.out.println("载体轨迹路径（千米）" + mileage.divide(new BigDecimal(1000)).setScale(2, RoundingMode.HALF_UP) + "km");
         System.out.println("任务用时（秒）" + (System.currentTimeMillis() - start)/1000 + "s");
     }
 
@@ -159,7 +159,7 @@ public class MileageUtils {
             deviation = (deviation.add(value.divide(deviation, mc))).divide(num2, mc);
             cnt++;
         }
-        deviation = deviation.setScale(scale, BigDecimal.ROUND_HALF_UP);
+        deviation = deviation.setScale(scale, RoundingMode.HALF_UP);
         return deviation;
     }
 
