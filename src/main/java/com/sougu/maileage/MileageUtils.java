@@ -132,10 +132,7 @@ public class MileageUtils {
         BigDecimal y2 = addSquare(a.r_cvr_y, b.r_cvr_y);
         BigDecimal z2 = addSquare(a.r_cvr_z, b.r_cvr_z);
         BigDecimal xyz2 = x2.add(y2).add(z2);
-//        System.out.println(x2 + " = " + x2.toPlainString() + ", y2 = "+ y2.toPlainString() + ", z2 = " + z2.toPlainString());
-        BigDecimal sq = sqrt(xyz2, 20);
-//        System.out.println("a->b  " + sq.toPlainString());
-        return sq;
+        return sqrt(xyz2, 20);
     }
 
     private static BigDecimal addSquare(BigDecimal a, BigDecimal b) {
@@ -159,8 +156,7 @@ public class MileageUtils {
             deviation = (deviation.add(value.divide(deviation, mc))).divide(num2, mc);
             cnt++;
         }
-        deviation = deviation.setScale(scale, RoundingMode.HALF_UP);
-        return deviation;
+        return deviation.setScale(scale, RoundingMode.HALF_UP);
     }
 
 }
