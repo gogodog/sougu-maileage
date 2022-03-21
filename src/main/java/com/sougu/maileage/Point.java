@@ -8,6 +8,9 @@ public class Point {
     BigDecimal r_cvr_x = BigDecimal.ZERO;
     BigDecimal r_cvr_y = BigDecimal.ZERO;
     BigDecimal r_cvr_z = BigDecimal.ZERO;
+    BigDecimal r_cvr_v_x = BigDecimal.ZERO;
+    BigDecimal r_cvr_v_y = BigDecimal.ZERO;
+    BigDecimal r_cvr_v_z = BigDecimal.ZERO;
 
     public BigDecimal getWn() {
         return wn;
@@ -49,11 +52,24 @@ public class Point {
         this.r_cvr_z = r_cvr_z;
     }
 
-    Point(BigDecimal wn, BigDecimal sow, BigDecimal r_cvr_x, BigDecimal r_cvr_y, BigDecimal r_cvr_z) {
+    Point(BigDecimal wn, BigDecimal sow, BigDecimal r_cvr_x, BigDecimal r_cvr_y, BigDecimal r_cvr_z, BigDecimal r_cvr_v_x, BigDecimal r_cvr_v_y, BigDecimal r_cvr_v_z) {
         this.wn = wn;
         this.sow = sow;
         this.r_cvr_x = r_cvr_x;
         this.r_cvr_y = r_cvr_y;
         this.r_cvr_z = r_cvr_z;
+        this.r_cvr_v_x = r_cvr_v_x;
+        this.r_cvr_v_y = r_cvr_v_y;
+        this.r_cvr_v_z = r_cvr_v_z;
+    }
+
+    Point(BigDecimal sow, BigDecimal r_cvr_x, BigDecimal r_cvr_y, BigDecimal r_cvr_z, BigDecimal r_cvr_v_x, BigDecimal r_cvr_v_y, BigDecimal r_cvr_v_z) {
+        this.sow = sow;
+        this.r_cvr_x = r_cvr_x;
+        this.r_cvr_y = r_cvr_y;
+        this.r_cvr_z = r_cvr_z;
+        this.r_cvr_v_x = r_cvr_v_x;
+        this.r_cvr_v_y = r_cvr_v_y;
+        this.r_cvr_v_z = r_cvr_v_z;
     }
 }
